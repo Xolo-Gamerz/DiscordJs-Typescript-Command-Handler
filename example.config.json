@@ -1,0 +1,7 @@
+{
+    "token":"DiscordToken",
+    "mongoDbToken":"MongoDbToken",
+    "prefix":"!",
+    "clientId":"DiscordClientId",
+    "guildId":["GuildId1","GuildId2"]
+}
