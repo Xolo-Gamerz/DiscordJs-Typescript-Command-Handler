@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
-import { Client, CommandInteraction } from "discord.js";
+import { ChatInputCommandInteraction, Client, CommandInteraction } from "discord.js";
 import ExtendedClient from "../classes/ExtendedClient";
 
 interface slashCommand {
@@ -8,7 +8,7 @@ interface slashCommand {
   permission : string[]
   usage? : string,
   guildOnly? : boolean,
-  execute: (interaction: CommandInteraction, client?: ExtendedClient) => unknown | void
+  execute: (interaction: ChatInputCommandInteraction, client?: ExtendedClient) => unknown | void
 }
 
 export default slashCommand;

@@ -1,10 +1,10 @@
-import { Collection, CommandInteraction } from "discord.js";
+import {ChatInputCommandInteraction, CommandInteraction } from "discord.js";
 import ExtendedClient from "../../classes/ExtendedClient";
 import slashCommand from "../../typings/slashCommand";
 
 module.exports = {
   name: "interactionCreate",
-  execute: async (interaction: CommandInteraction, client: ExtendedClient) => {
+  execute: async (interaction: ChatInputCommandInteraction, client: ExtendedClient) => {
     if (!interaction.isCommand()) {
       return;
     }
