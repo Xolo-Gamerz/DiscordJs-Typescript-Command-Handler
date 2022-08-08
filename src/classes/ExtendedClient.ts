@@ -1,7 +1,7 @@
-import { Client, Collection, Intents } from "discord.js";
+import { Client, Collection,GatewayIntentBits,Partials } from "discord.js";
 import command from "../typings/command";
 import slashCommand from "../typings/slashCommand";
-
+const {User,Message,Channel,Reaction} = Partials
 class ExtendedClient extends Client{
     commands: Collection<string, command> = new Collection();
     slashCommands : Collection<string, slashCommand> = new Collection()
@@ -13,14 +13,13 @@ class ExtendedClient extends Client{
     constructor(){
         super({
             intents: [
-                Intents.FLAGS.GUILDS,
-                Intents.FLAGS.GUILD_MEMBERS,
-                Intents.FLAGS.GUILD_MESSAGES,
-                Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+                GatewayIntentBits.Guilds,
+                GatewayIntentBits.GuildMembers,
+                GatewayIntentBits.GuildMessages,
+                GatewayIntentBits.GuildMessageReactions,
               ],
-              restTimeOffset: 0,
               shards: "auto",
-              partials: ["MESSAGE", "CHANNEL", "USER", "REACTION"],
+              partials: [User,Message,Channel,Reaction],
         })
     }
 

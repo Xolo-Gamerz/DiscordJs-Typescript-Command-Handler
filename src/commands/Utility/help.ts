@@ -1,4 +1,4 @@
-import { MessageEmbed, Permissions } from "discord.js";
+import { EmbedBuilder, Permissions } from "discord.js";
 import command from "../../typings/command";
 const helpLegacyCommand: command = {
   name: "help",
@@ -27,8 +27,8 @@ const helpLegacyCommand: command = {
           .setColor("RED");
         message.channel.send({ embeds: [embed] });
       } else {
-        const embed = new MessageEmbed();
-        embed.setColor("RANDOM");
+        const embed = new EmbedBuilder();
+        embed.setColor("Random");
         if (cmd.name) embed.addField("**Command name**", `\`${cmd.name}\``);
         if (cmd.name)
           embed.setTitle(`Detailed Information about: \`${cmd.name}\``);

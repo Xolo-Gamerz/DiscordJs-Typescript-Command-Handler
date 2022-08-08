@@ -1,10 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 // const legacyCommand = require("../schema/LegacyCommandSchema");
-const {PrismaClient} = require("@prisma/client")
 const mainDir = `${__dirname}`;
 const { token, guildId, clientId } = require("../../config.json");
-const prisma = new PrismaClient()
 // @ts-ignore
 const dir = `${path.dirname(mainDir)}`;
 const commandDir = `${dir}/slashCommands`;
