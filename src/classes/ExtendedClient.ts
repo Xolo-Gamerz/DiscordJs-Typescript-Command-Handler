@@ -13,6 +13,7 @@ class ExtendedClient extends Client{
     constructor(){
         super({
             intents: [
+                GatewayIntentBits.MessageContent,
                 GatewayIntentBits.Guilds,
                 GatewayIntentBits.GuildMembers,
                 GatewayIntentBits.GuildMessages,
