@@ -21,7 +21,7 @@ module.exports = (client: ExtendedClient) => {
       for (let file of commands) {
         let pull: Object = require(`${commandDir}/${dir}/${file}`);
         const commandName: Array<Object> = Object.values(pull);
-        //@ts-ignore
+        // @ts-ignore
         commandName.map(async (cmd: command) => {
           if (cmd.name) {
             client.commands.set(cmd.name, cmd);

@@ -2,7 +2,6 @@ import { Collection } from "discord.js";
 import { readdirSync } from "fs";
 import mongoose from "mongoose"
 import ExtendedClient from "./classes/ExtendedClient";
-import { token, mongoDbToken } from "../config.json";
 const client = new ExtendedClient();
 client.commands = new Collection();
 client.cooldown = new Collection();
@@ -11,7 +10,8 @@ client.aliases = new Collection();
 client.events = new Collection();
 client.categories = readdirSync(`${__dirname}/commands`);
 client.slashCategories = readdirSync(`${__dirname}/slashCommands`)
-
+const token = process.env.TOKEN
+const mongoDbToken = process.env.DATABASE_URL
 const files: Array<String> = ["events", "commands", "slashCommands"];
 
 files.filter(Boolean).forEach((file) => {

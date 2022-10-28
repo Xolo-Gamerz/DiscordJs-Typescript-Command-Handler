@@ -2,7 +2,8 @@ const path = require("path");
 const fs = require("fs");
 // const legacyCommand = require("../schema/LegacyCommandSchema");
 const mainDir = `${__dirname}`;
-const { token, guildId, clientId } = require("../../config.json");
+const { guildId, clientId } = require("../../config.json");
+const token = process.env.TOKEN
 // @ts-ignore
 const dir = `${path.dirname(mainDir)}`;
 const commandDir = `${dir}/slashCommands`;
